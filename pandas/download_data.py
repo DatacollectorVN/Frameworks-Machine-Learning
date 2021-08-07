@@ -6,24 +6,25 @@ class Cfg(object):
   
     def __init__(self):
         super(Cfg, self).__init__()
-        self.data_urls = ['https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/1/sinh_vien_VL.csv']
+        self.data_urls = ['https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/2/titanic.csv']
     
-    def down_data(self, destination):
+    def down_data(self, destination_dir):
         data_url = self.data_urls[0]
         print ('Start to download, this process take a few minutes')
-        urllib.request.urlretrieve(data_url, destination)
-        print("Downloaded dataset - {} to-'{}'".format(data_url, destination))
 
-def main(dest):
+        destination = os.path.join(destination_dir, data_url.split('/')[-1])
+        urllib.request.urlretrieve(data_url, destination)
+        print("Downloaded dataset - {} to- '{}'".format(data_url, destination))
+
+def main(destination_dir):
     cfg = Cfg()
-    cfg.down_data(destination = dest)
+    cfg.down_data(destination_dir = destination_dir)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--dest', help= 'Destination to save model', type= str,
-                        default= './dataset/')
+                        default= './dataset/', dest = 'dest')
 
     args = parser.parse_args()
     os.makedirs(args.dest, exist_ok = True)
-    dest = os.path.join(args.dest, 'sinh_vien_VL.csv')
-    main(dest= dest)
+    main(destination_dir = args.dest)
