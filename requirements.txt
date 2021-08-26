@@ -1,6 +1,10 @@
 requests==2.26.0
 pandas==1.1.5
-numpy==1.18.5
+numpy==1.20
 matplotlib==3.3.4
 seaborn==0.11.1
 scikit-learn==0.22.2
+tqdm==4.62.0
+plotly==5.1.0
+nbformat==4.2.0
+opencv_contrib_python==4.4.0.42
