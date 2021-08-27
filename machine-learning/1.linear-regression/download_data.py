@@ -6,7 +6,7 @@ class Cfg(object):
   
     def __init__(self):
         super(Cfg, self).__init__()
-        self.data_urls = ['https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/3/ames.csv']
+        self.data_urls = ['https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/5/Iris.xls']
     
     def down_data(self, destination_dir):
         data_url = self.data_urls[0]

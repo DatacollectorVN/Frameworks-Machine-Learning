@@ -8,3 +8,4 @@ tqdm==4.62.0
 plotly==5.1.0
 nbformat==4.2.0
 opencv_contrib_python==4.4.0.42
+xlrd==2.0.1
