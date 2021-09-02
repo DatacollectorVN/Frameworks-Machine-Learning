@@ -4,7 +4,6 @@ import requests
 import sys
 import argparse
 class Cfg(object):
-  
     def __init__(self):
         super(Cfg, self).__init__()
         self.data_urls = ["https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/5/Iris.xls", 
