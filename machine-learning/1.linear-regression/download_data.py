@@ -19,7 +19,6 @@ class Cfg(object):
             data_url = self.data_urls[1]
 
         print ('Start to download, this process take a few minutes')
-
         destination = os.path.join(destination_dir, data_url.split('/')[-1])
         urllib.request.urlretrieve(data_url, destination)
         print("Downloaded dataset - {} to- '{}'".format(data_url, destination))
