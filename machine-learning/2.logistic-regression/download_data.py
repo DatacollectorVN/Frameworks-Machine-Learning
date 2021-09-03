@@ -6,13 +6,16 @@ import argparse
 class Cfg(object):
     def __init__(self):
         super(Cfg, self).__init__()
-        self.data_urls = ["https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/7/diabetes.csv"]
+        self.data_urls = ["https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/7/diabetes.csv",
+                          "https://github.com/DatacollectorVN/Frameworks-Machine-Learning/releases/download/5/Iris.xls"]
     
     def down_data(self, destination_dir, data_type):
         assert data_type != None, "Datatype can't be None"
 
         if 'diabetes' in data_type:
             data_url = self.data_urls[0]
+        elif 'iris' in data_type:
+            data_url = self.data_urls[1]
 
         print ('Start to download, this process take a few minutes')
         destination = os.path.join(destination_dir, data_url.split('/')[-1])
